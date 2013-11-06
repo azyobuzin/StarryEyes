@@ -42,6 +42,7 @@ namespace StarryJs
         public void Execute(string script, params object[] parameters)
         {
             var engine = new Jurassic.ScriptEngine();
+            engine.SetGlobalValue("console", new Jurassic.Library.FirebugConsole(engine));
             int i = 0;
             foreach (var p in parameters)
             {
